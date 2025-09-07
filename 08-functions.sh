@@ -29,7 +29,7 @@ echo "mysql is not installed, going to install it"
 
       dnf install mysql -y
 
-      validation() $? "mysql"
+      validation $? "mysql"
 else
 echo "mysql is already installed"
 exit 1       
