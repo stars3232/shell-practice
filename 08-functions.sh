@@ -35,3 +35,33 @@ echo "mysql is already installed"
 exit 1       
 
 fi       
+
+dnf list installed nginx
+
+if [ $? -ne 0 ]
+then
+echo "nginx is not installed, going to install it"
+
+      dnf install nginx -y
+
+      validation $? "nginx"
+else
+echo "nginx is already installed"
+exit 1       
+
+fi       
+
+dnf list installed mysql
+
+if [ $? -ne 0 ]
+then
+echo "mysql is not installed, going to install it"
+
+      dnf install mysql -y
+
+      validation $? "mysql"
+else
+echo "mysql is already installed"
+exit 1       
+
+fi       
