@@ -51,17 +51,17 @@ exit 1
 
 fi       
 
-dnf list installed mysql
+dnf list installed python3
 
 if [ $? -ne 0 ]
 then
-echo "mysql is not installed, going to install it"
+echo "python3 is not installed, going to install it"
 
-      dnf install mysql -y
+      dnf install python3 -y
 
       validation $? "mysql"
 else
-echo "mysql is already installed"
+echo "python3 is already installed"
 exit 1       
 
 fi       
