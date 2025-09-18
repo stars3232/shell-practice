@@ -33,7 +33,6 @@ echo "mysql is not installed, going to install it"
 else
 echo "mysql is already installed"
 exit 1       
-
 fi       
 
 dnf list installed nginx
@@ -48,7 +47,6 @@ echo "nginx is not installed, going to install it"
 else
 echo "nginx is already installed"
 exit 1       
-
 fi       
 
 dnf list installed python3
@@ -63,5 +61,4 @@ echo "python3 is not installed, going to install it"
 else
 echo "python3 is already installed"
 exit 1       
-
 fi       
