@@ -2,10 +2,10 @@
 
 userid=$(id -u)
 
-R=\e[31m
-G=\e[32m
-Y=\e[33m
-N=\e[0m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 
 if [ $userid -eq 0 ]
@@ -38,7 +38,7 @@ echo -e "mysql is not installed, going to install it"
       validation $? "mysql"
 else
 echo -e "$Y mysql is already installed $N"
-exit 1       
+      
 
 fi       
 
@@ -53,7 +53,7 @@ echo -e "nginx is not installed, going to install it"
       validation $? "nginx"
 else
 echo -e "$Y nginx is already installed $N"
-exit 1       
+    
 
 fi       
 
@@ -68,6 +68,6 @@ echo -e "python3 is not installed, going to install it"
       validation $? "mysql"
 else
 echo -e "$Y python3 is already installed $N"
-exit 1       
+    
 
 fi       
