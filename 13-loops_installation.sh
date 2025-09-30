@@ -77,7 +77,7 @@ else
 echo -e "$Y python3 is already installed $N" | tee -a $LOG_FILE
     
 
-fi  
+f  
 
 
 
