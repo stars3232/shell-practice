@@ -49,6 +49,7 @@ echo -e "$PACKAGE is not installed, going to install it" | tee -a $LOG_FILE
       validation $? "$PACKAGE"
 else
 echo -e "$Y $PACKAGE is already installed $N" | tee -a $LOG_FILE
+fi
 
 done
       
