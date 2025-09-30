@@ -31,53 +31,8 @@ validation()
       else
           echo -e "$R $2 installation is failure $N" | tee -a $LOG_FILE
           exit 1
-      fi  
+   fi  
 }
-
-dnf list installed mysql &>>$LOG_FILE
-
-if [ $? -ne 0 ]
-then
-echo -e "mysql is not installed, going to install it" | tee -a $LOG_FILE
-
-      dnf install mysql -y &>>$LOG_FILE
-
-      validation $? "mysql"
-else
-echo -e "$Y mysql is already installed $N" | tee -a $LOG_FILE
-      
-
-fi       
-
-dnf list installed nginx &>>$LOG_FILE
-
-if [ $? -ne 0 ]
-then
-echo -e "nginx is not installed, going to install it" | tee -a $LOG_FILE
-
-      dnf install nginx -y &>>$LOG_FILE
-
-      validation $? "nginx"
-else
-echo -e "$Y nginx is already installed $N" | tee -a $LOG_FILE
-    
-
-fi       
-
-dnf list installed python3 &>>$LOG_FILE
-
-if [ $? -ne 0 ]
-then
-echo -e "python3 is not installed, going to install it" | tee -a $LOG_FILE
-
-      dnf install python3 -y &>>$LOG_FILE
-
-      validation $? "mysql"
-else
-echo -e "$Y python3 is already installed $N" | tee -a $LOG_FILE
-    
-
-fi  
 
 
 
@@ -94,5 +49,7 @@ echo -e "$PACKAGE is not installed, going to install it" | tee -a $LOG_FILE
       validation $? "$PACKAGE"
 else
 echo -e "$Y $PACKAGE is already installed $N" | tee -a $LOG_FILE
+
+done
       
 
