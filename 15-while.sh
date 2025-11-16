@@ -1,8 +1,9 @@
 #!/bin/bash
 
-a=10
-while [ $a -lt 20 ]
+a=0
+
+while [ $a -lt 10 ]
 do 
-  echo "$a"
-  a= expr $a + 1
+  echo $a
+  a='expr $a + 1'
 done  
