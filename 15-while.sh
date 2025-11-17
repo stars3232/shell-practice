@@ -13,4 +13,4 @@
  while IFS= read -r line
  do
    echo "$line"
- done < myfile.txt
+ done < newfile.txt
