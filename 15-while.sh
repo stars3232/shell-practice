@@ -13,4 +13,4 @@
  while IFS -r line
  do
    echo "$line"
- done < cart.java
+ done < 14-set.sh
