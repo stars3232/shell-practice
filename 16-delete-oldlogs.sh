@@ -1,8 +1,11 @@
 #!/bin/bash
 
-Files_directory=/home/ec2-user/
-Files_to_delete=$(find $Files_directory -name "*.log" -mtime +14)
+Files_directory="/home/ec2-user"
 
-rm -rf /$Files_directory/$Files_to_delete
+# Find files and loop safely
+find "$Files_directory" -name "*.log" -mtime +14 | while read file
+do
+    rm -f "$file"
+done
 
-echo " Files older than 14 days are deleted"
+echo "Files older than 14 days are deleted"
