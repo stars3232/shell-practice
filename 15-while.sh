@@ -10,7 +10,7 @@
    # a=`expr $a + 1` 
  #done
 
- while IFS= -r line
+ while IFS= read -r line
  do
    echo "$line"
  done < 14-set.sh
