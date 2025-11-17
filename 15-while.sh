@@ -1,18 +1,16 @@
 #!/bin/bash
 
+  
+
 #a=0
 
-#while [ $a -lt 10 ]
-#do 
+# while [ $a -lt 10 ]
+ #do
+   # echo $a
+   # a=`expr $a + 1` 
+ #done
 
-  #echo $a
- # a='expr $a + 1'
-#done  
-
-a=0
-
- while [ $a -lt 10 ]
+ while IFS -r line
  do
-    echo $a
-    a=`expr $a + 1` 
- done
+   echo "$line"
+ done < cart.java
