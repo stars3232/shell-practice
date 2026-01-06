@@ -13,7 +13,7 @@ mkdir -p $LOG_FOLDER
 
 if [ $USER_ID -eq 0 ]
 then
-    echo "You r running with root access. u can ove forward" | tee -a $LOG_FILE
+    echo "You r running with root access. u can move forward" | tee -a $LOG_FILE
 else 
     echo "Please run as root user" | tee -a $LOG_FILE
     exit 1
@@ -30,7 +30,7 @@ then
 USAGE
 fi
 
-if [ -d $SOURCE_DIR ]
+if [ -d "$SOURCE_DIR" ]
 then
 echo " $SOURCE_DIR exists" | tee -a $LOG_FILE
 else
@@ -38,7 +38,7 @@ echo " $SOURCE_DIR does not exists" | tee -a $LOG_FILE
 exit 1
 fi
 
-if [ -d $TARGET_DIR ]
+if [ -d "$TARGET_DIR" ]
 then
 echo " $TARGET_DIR exists" | tee -a $LOG_FILE
 else
@@ -48,7 +48,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ ! -z $FILES  ]
+if [ ! -z "$FILES"  ]
 then
     echo "files found $FILES" | tee -a $LOG_FILE
     ZIP_FILE="$TARGET_DIR/app-logs.zip"
@@ -60,7 +60,7 @@ then
     while IFS= read -r filepath
     do
     echo "deleting file $filepath" | tee -a $LOG_FILE
-    rm -rf $filepath
+    rm -rf "$filepath"
     done <<< $FILES
     echo "files older than $DAYS are successfully removed" | tee -a $LOG_FILE
     else 
